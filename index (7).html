@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAKSHA — When the City Sleeps, Safety Shouldn't</title>
+<meta name="description" content="RAKSHA is a privacy-first women's safety platform: AI detection, silent SOS, live GPS tracking and a verified community — built for the hours nobody else is watching.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ===== LOADER ===== -->
+<div class="loader" id="loader">
+  <div class="loader-mark">
+    <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+      <circle cx="28" cy="28" r="24" stroke="url(#loaderGrad)" stroke-width="2" stroke-dasharray="4 6"/>
+      <path d="M28 14 L28 28 L37 33" stroke="url(#loaderGrad)" stroke-width="2.5" stroke-linecap="round"/>
+      <defs>
+        <linearGradient id="loaderGrad" x1="0" y1="0" x2="56" y2="56">
+          <stop offset="0" stop-color="#7C3AED"/>
+          <stop offset="1" stop-color="#22D3EE"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+  <p class="loader-text">RAKSHA</p>
+  <div class="loader-bar"><span id="loaderProgress"></span></div>
+</div>
+
+<!-- ===== SIGNATURE: LIVE ROUTE THREAD ===== -->
+<div class="route-thread" aria-hidden="true">
+  <svg width="3" height="100%" viewBox="0 0 3 100" preserveAspectRatio="none">
+    <line x1="1.5" y1="0" x2="1.5" y2="100" stroke="url(#threadGrad)" stroke-width="1.5"/>
+    <defs>
+      <linearGradient id="threadGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#7C3AED" stop-opacity="0.1"/>
+        <stop offset="0.5" stop-color="#22D3EE" stop-opacity="0.5"/>
+        <stop offset="1" stop-color="#7C3AED" stop-opacity="0.1"/>
+      </linearGradient>
+    </defs>
+  </svg>
+  <div class="route-blip" id="routeBlip"></div>
+</div>
+
+<!-- ===== NAV ===== -->
+<header class="nav" id="nav">
+  <a href="#hero" class="nav-logo">
+    <span class="nav-logo-dot"></span> RAKSHA
+  </a>
+  <nav class="nav-links" id="navLinks">
+    <a href="#about">About</a>
+    <a href="#features">Features</a>
+    <a href="#how">How it Works</a>
+    <a href="#technology">Technology</a>
+    <a href="#security">Security</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <div class="nav-actions">
+    <button class="btn btn-ghost" id="watchDemoNav">Watch Demo</button>
+    <button class="btn btn-primary" id="getStartedNav">Get Started</button>
+  </div>
+  <button class="nav-burger" id="navBurger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero">
+  <canvas id="cityCanvas"></canvas>
+  <div class="hero-glow"></div>
+  <div class="hero-content reveal">
+    <p class="eyebrow">Privacy-first · Always awake</p>
+    <h1 class="hero-title">When the City Sleeps,<br><span class="text-gradient">Safety Shouldn't.</span></h1>
+    <p class="hero-sub">RAKSHA watches the routes, the silence, and the seconds that matter — so the people you love get home, every time.</p>
+    <div class="hero-cta">
+      <button class="btn btn-primary btn-lg" id="getStartedHero">Get Started <span class="arrow">→</span></button>
+      <button class="btn btn-glass btn-lg" id="watchDemoHero"><span class="play-ico">▶</span> Watch Demo</button>
+      <a href="#features" class="btn btn-text btn-lg">Explore Features</a>
+    </div>
+  </div>
+  <div class="hero-stats reveal">
+    <div><strong>24/7</strong><span>Silent monitoring</span></div>
+    <div><strong>&lt;2s</strong><span>SOS trigger time</span></div>
+    <div><strong>128-bit</strong><span>End-to-end encryption</span></div>
+  </div>
+  <div class="scroll-cue"><span></span></div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="section about" id="about">
+  <div class="container about-grid">
+    <div class="reveal">
+      <p class="eyebrow">About Raksha</p>
+      <h2 class="section-title">Built for the walk home, not the press conference.</h2>
+      <p class="section-lead">Raksha is a privacy-first safety layer that runs quietly in the background of a woman's day — reading motion, sound, and location signals to tell the difference between an ordinary night and one that's going wrong, then acting before she has to ask.</p>
+    </div>
+    <div class="about-card glass reveal">
+      <div class="about-card-row"><span>Founded on</span><strong>Consent &amp; encryption</strong></div>
+      <div class="about-card-row"><span>Runs on</span><strong>Phone + wearable</strong></div>
+      <div class="about-card-row"><span>Trusted by</span><strong>Verified community network</strong></div>
+      <div class="about-card-row"><span>Data policy</span><strong>Nothing sold. Ever.</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROBLEM ===== -->
+<section class="section problem" id="problem">
+  <div class="container">
+    <p class="eyebrow center">The Problem</p>
+    <h2 class="section-title center">Most safety apps wait for a woman<br>to reach for her phone.</h2>
+    <p class="section-lead center">In the moment that matters most, that's the one thing she often can't do.</p>
+    <div class="stat-row reveal">
+      <div class="stat-card glass">
+        <strong class="stat-num">73%</strong>
+        <span>of assaults occur within a few minutes of a route deviation going unnoticed</span>
+      </div>
+      <div class="stat-card glass">
+        <strong class="stat-num">6 sec</strong>
+        <span>average time it takes fear to freeze a hand mid-reach for a phone</span>
+      </div>
+      <div class="stat-card glass">
+        <strong class="stat-num">1 in 3</strong>
+        <span>women say they've faked a phone call to feel safer walking alone</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SOLUTION ===== -->
+<section class="section solution" id="solution">
+  <div class="container solution-grid">
+    <div class="solution-visual reveal">
+      <div class="solution-orb">
+        <div class="orb-ring r1"></div>
+        <div class="orb-ring r2"></div>
+        <div class="orb-ring r3"></div>
+        <div class="orb-core">R</div>
+      </div>
+    </div>
+    <div class="reveal">
+      <p class="eyebrow">The Solution</p>
+      <h2 class="section-title">Raksha listens before she has to speak.</h2>
+      <p class="section-lead">A shake, a dropped word, a route that suddenly bends the wrong way — Raksha's on-device AI reads the signal, confirms with a silent check-in, and escalates to trusted contacts and verified responders in seconds, without a single tap.</p>
+      <ul class="check-list">
+        <li>On-device detection — nothing leaves the phone unless it has to</li>
+        <li>Silent, two-step confirmation to avoid false alarms</li>
+        <li>Automatic handoff to contacts, community, and police integration</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FEATURES ===== -->
+<section class="section features" id="features">
+  <div class="container">
+    <p class="eyebrow center">Features</p>
+    <h2 class="section-title center">Fourteen ways Raksha watches your back.</h2>
+    <div class="features-grid" id="featuresGrid"><!-- injected by JS --></div>
+  </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section class="section how" id="how">
+  <div class="container">
+    <p class="eyebrow center">How it Works</p>
+    <h2 class="section-title center">From ordinary walk to protected route in four steps.</h2>
+    <div class="timeline" id="timeline"><!-- injected by JS --></div>
+  </div>
+</section>
+
+<!-- ===== TECHNOLOGY ===== -->
+<section class="section technology" id="technology">
+  <div class="container">
+    <p class="eyebrow center">Technology</p>
+    <h2 class="section-title center">Engineered like infrastructure, not an app.</h2>
+    <p class="section-lead center">Raksha is built on a modern, real-time stack designed to stay fast, private, and online — even when the network isn't.</p>
+    <div class="tech-grid reveal" id="techGrid"><!-- injected by JS --></div>
+  </div>
+</section>
+
+<!-- ===== COMMUNITY IMPACT ===== -->
+<section class="section impact" id="impact">
+  <div class="container">
+    <p class="eyebrow center">Community Impact</p>
+    <h2 class="section-title center">A network that grows safer every night.</h2>
+    <div class="impact-grid reveal">
+      <div class="impact-card glass"><strong class="counter" data-target="182000">0</strong><span>Verified community guardians</span></div>
+      <div class="impact-card glass"><strong class="counter" data-target="41000">0</strong><span>Safe routes mapped by users</span></div>
+      <div class="impact-card glass"><strong class="counter" data-target="9600">0</strong><span>Emergencies resolved without escalation</span></div>
+      <div class="impact-card glass"><strong class="counter" data-target="120">0</strong><span>Cities with active response partners</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="section testimonials" id="testimonials">
+  <div class="container">
+    <p class="eyebrow center">Testimonials</p>
+    <h2 class="section-title center">Stories from the walk home.</h2>
+    <div class="testi-track" id="testiTrack"><!-- injected by JS --></div>
+    <div class="testi-dots" id="testiDots"></div>
+  </div>
+</section>
+
+<!-- ===== APP PREVIEW ===== -->
+<section class="section app-preview" id="app">
+  <div class="container app-grid">
+    <div class="reveal">
+      <p class="eyebrow">App Preview</p>
+      <h2 class="section-title">One thumb-press from calm to protected.</h2>
+      <p class="section-lead">A single, uncluttered home screen: your live route, your trusted circle, and one silent trigger — always within reach, never in the way.</p>
+      <div class="phone-features">
+        <span>Live route map</span><span>Trusted circle</span><span>Silent SOS</span><span>Voice trigger</span>
+      </div>
+    </div>
+    <div class="phone-mock reveal" id="phoneMock">
+      <div class="phone-notch"></div>
+      <div class="phone-screen">
+        <div class="phone-status"><span>9:41</span><span>●●●</span></div>
+        <div class="phone-map">
+          <svg viewBox="0 0 240 160" width="100%" height="100%">
+            <path d="M10 140 Q 60 40 120 80 T 230 20" stroke="url(#phoneRoute)" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <circle cx="10" cy="140" r="5" fill="#22D3EE"/>
+            <circle cx="230" cy="20" r="5" fill="#7C3AED"/>
+            <defs><linearGradient id="phoneRoute" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#22D3EE"/><stop offset="1" stop-color="#7C3AED"/>
+            </linearGradient></defs>
+          </svg>
+        </div>
+        <div class="phone-sos">Hold for Silent SOS</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WEARABLE ===== -->
+<section class="section wearable" id="wearable">
+  <div class="container wearable-grid">
+    <div class="wearable-mock reveal">
+      <div class="band-strap left"></div>
+      <div class="band-face">
+        <div class="band-pulse"></div>
+        <span>RAKSHA</span>
+      </div>
+      <div class="band-strap right"></div>
+    </div>
+    <div class="reveal">
+      <p class="eyebrow">Wearable</p>
+      <h2 class="section-title">Protection that doesn't need a screen.</h2>
+      <p class="section-lead">The Raksha band reads a double-tap or a sudden fall, pairs instantly with your phone, and keeps working when your hands — or your phone — aren't free.</p>
+      <ul class="check-list">
+        <li>72-hour battery, waterproof, always paired</li>
+        <li>Discreet double-tap trigger, no screen required</li>
+        <li>Vibrates a quiet confirmation only you can feel</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECURITY ===== -->
+<section class="section security" id="security">
+  <div class="container security-grid">
+    <div class="reveal">
+      <p class="eyebrow">Security &amp; Privacy</p>
+      <h2 class="section-title">Your location is a secret, even from us.</h2>
+      <p class="section-lead">Every signal Raksha reads is encrypted end-to-end. Location history lives on your device by default, and nothing is ever sold, profiled, or handed over without your explicit, revocable consent.</p>
+      <div class="security-badges">
+        <span>End-to-end encrypted</span>
+        <span>On-device AI</span>
+        <span>Zero data resale</span>
+        <span>Revocable consent</span>
+      </div>
+    </div>
+    <div class="security-visual reveal">
+      <svg viewBox="0 0 300 300" width="100%" height="100%">
+        <circle cx="150" cy="150" r="120" stroke="#7C3AED" stroke-opacity="0.25" stroke-width="1" fill="none"/>
+        <circle cx="150" cy="150" r="90" stroke="#22D3EE" stroke-opacity="0.3" stroke-width="1" fill="none"/>
+        <path d="M150 70 L200 95 V150 Q200 200 150 225 Q100 200 100 150 V95 Z" fill="url(#shieldGrad)" stroke="#fff" stroke-opacity="0.15"/>
+        <path d="M125 150 L143 168 L180 128" stroke="#0A0A0F" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <defs><linearGradient id="shieldGrad" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#7C3AED"/><stop offset="1" stop-color="#22D3EE"/>
+        </linearGradient></defs>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section faq" id="faq">
+  <div class="container container-narrow">
+    <p class="eyebrow center">FAQ</p>
+    <h2 class="section-title center">Questions, answered plainly.</h2>
+    <div class="faq-list" id="faqList"><!-- injected by JS --></div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="section cta" id="cta">
+  <div class="container cta-inner reveal">
+    <h2 class="cta-title">Get home safe tonight.<br>Get Raksha now.</h2>
+    <p class="section-lead center">Free for individuals. Built for the nights nobody else is watching.</p>
+    <div class="hero-cta center">
+      <button class="btn btn-primary btn-lg" id="getStartedCta">Get Started <span class="arrow">→</span></button>
+      <button class="btn btn-glass btn-lg" id="watchDemoCta"><span class="play-ico">▶</span> Watch Demo</button>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <a href="#hero" class="nav-logo"><span class="nav-logo-dot"></span> RAKSHA</a>
+      <p class="footer-tag">Safety that doesn't sleep.</p>
+    </div>
+    <div>
+      <h4>Product</h4>
+      <a href="#features">Features</a>
+      <a href="#app">App</a>
+      <a href="#wearable">Wearable</a>
+      <a href="#security">Security</a>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <a href="#about">About</a>
+      <a href="#impact">Impact</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div>
+      <h4>Get the app</h4>
+      <div class="store-badges">
+        <span>App Store</span>
+        <span>Google Play</span>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 Raksha. All rights reserved.</span>
+    <span>Privacy · Terms · Emergency: dial your local number first, always.</span>
+  </div>
+</footer>
+
+<!-- ===== DEMO MODAL ===== -->
+<div class="modal" id="demoModal">
+  <div class="modal-backdrop" id="modalBackdrop"></div>
+  <div class="modal-card glass">
+    <button class="modal-close" id="modalClose">✕</button>
+    <div class="modal-video">
+      <div class="modal-video-anim">
+        <div class="ring"></div><div class="ring"></div><div class="ring"></div>
+        <span>▶</span>
+      </div>
+    </div>
+    <h3>See Raksha respond in real time</h3>
+    <p>A simulated walk home — from route deviation to silent SOS to guardian response — in ninety seconds.</p>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
